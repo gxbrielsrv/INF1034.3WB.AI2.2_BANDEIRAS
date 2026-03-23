@@ -23,37 +23,27 @@ t.begin_fill()
 t.fillcolor('red')
 t.circle(75)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
-#bandeira2: polonia(facil 25xp)
-t.color('black')
-t.pu()
-t.goto(-200,0)
-t.lt(90)
-t.pd()
-t.fd(380)
-t.lt(90)
-t.fd(230)
-t.lt(90)
-t.fd(380)
-t.lt(90)
-t.fd(230)
-t.pu()
-t.goto(-200,115)
-t.pd()
+#bandeira2: polonia(facil 25xp) + extra de funcao
+def retangulo(x, y, largura, altura, cor):
+    t.color(cor)
+    t.penup()
+    t.goto(x, y)
+    t.setheading(90)  # garante que começa reto
+    t.pendown()
+    for _ in range(2):
+        t.forward(altura)
+        t.left(90)
+        t.forward(largura)
+        t.left(90)
+retangulo(0, 150, 440, 150, 'black')
 t.begin_fill()
 t.fillcolor('red')
-t.lt(90)
-t.fd(380)
-t.rt(90)
-t.fd(115)
-t.rt(90)
-t.fd(380)
-t.rt(90)
-t.fd(115)
+retangulo(0, 0,440,150, 'red')
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira3: arabes unidos(media 50xp)
@@ -104,7 +94,7 @@ t.fd(230)
 t.lt(90)
 t.fd(100)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira4: indoneisa(facil 25xp)
@@ -133,7 +123,7 @@ t.fd(115)
 t.rt(90)
 t.fd(380)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira5: holanda(facil 25xp)
@@ -172,7 +162,7 @@ t.fd(76.6)
 t.rt(90)
 t.fd(380)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira6: yemen(facil 25xp)
@@ -211,7 +201,7 @@ t.fd(76.6)
 t.rt(90)
 t.fd(380)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira7: austria(facil 25xp)
@@ -251,7 +241,7 @@ t.fd(76.6)
 t.rt(90)
 t.fd(380)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira8: bahamas(media 50xp)
@@ -303,7 +293,7 @@ t.fd(162.5)
 t.lt(135)
 t.fd(230)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira9: palestina(media 50xp)
@@ -354,7 +344,7 @@ t.fd(162.5)
 t.lt(135)
 t.fd(230)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira10: sudao(media 50xp)
@@ -405,7 +395,7 @@ t.fd(162.5)
 t.lt(135)
 t.fd(230)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira11: grecia(dificil 75xp)
@@ -515,7 +505,7 @@ t.fd(25)
 t.rt(90)
 t.fd(253)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
 
 #bandeira 12: sao tome  e principe(dificil 75xp)
@@ -604,15 +594,13 @@ t.fd(18.4)
 t.rt(90)
 t.fd(16.5)
 t.end_fill()
-sleep(0)
+sleep(3)
 t.clear()
-#extra
 
-t.color("red")  # define vermelho para tudo
+#extra: simbolo diferente
 
-# escala (pra controlar tamanho)
+t.color("red")  
 escala = 0.5
-
 pontos = [
     (0*escala, 150*escala), (20*escala, 80*escala), (60*escala, 100*escala),
     (40*escala, 40*escala), (100*escala, 30*escala), (30*escala, -10*escala),
@@ -621,24 +609,20 @@ pontos = [
     (-60*escala, 100*escala), (-20*escala, 80*escala)
 ]
 
-# folha
 t.penup()
 t.goto(pontos[0])
 t.pendown()
-
 t.begin_fill()
 for p in pontos:
     t.goto(p)
 t.goto(pontos[0])
 t.end_fill()
-
-# tronco (também vermelho)
 t.penup()
 t.goto(0, -40 * escala)
 t.setheading(-90)
 t.pendown()
 t.width(6 * escala)
-t.color("red")  # garante que continua vermelho
+t.color("red")  
 t.forward(60 * escala)
 t.color('black')
 t.pu()
@@ -667,39 +651,6 @@ t.end_fill()
 t.bk(210)
 t.rt(90)
 t.fd(280)
-
-
-
-
+sleep(3)
 
 mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mainloop()
-
-
-
-
-
-
