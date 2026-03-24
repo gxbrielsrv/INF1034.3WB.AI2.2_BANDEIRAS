@@ -29,15 +29,15 @@ t.clear()
 #bandeira2: polonia(facil 25xp) + extra de funcao
 def retangulo(x, y, largura, altura, cor):
     t.color(cor)
-    t.penup()
+    t.pu()
     t.goto(x, y)
     t.setheading(90)  # garante que começa reto
-    t.pendown()
+    t.pd()
     for _ in range(2):
-        t.forward(altura)
-        t.left(90)
-        t.forward(largura)
-        t.left(90)
+        t.fd(altura)
+        t.lt(90)
+        t.fd(largura)
+        t.lt(90)
 retangulo(0, 150, 440, 150, 'black')
 t.begin_fill()
 t.fillcolor('red')
