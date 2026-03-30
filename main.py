@@ -224,6 +224,7 @@ arabes_unidos()
 sleep(3)
 t.clear()
 
+#indonesia
 indonesia()
 sleep(3)
 t.clear()
@@ -273,4 +274,24 @@ canada()
 sleep(3)
 t.clear()
 
+
+bandeiras = { 
+    'Japao' : japao, 
+    'Polonia' : polonia, 
+    'Arabes Unidos' : arabes_unidos,
+    'Indonesia' : indonesia,
+    'Holanda' : holanda,
+    'Iemen' : iemen,
+    'Austria' : austria,
+    'Bahamas' : bahamas,
+    'Palestina' : palestina,
+    'Sudao' : sudao,
+    'Grecia' : grecia,
+    'Sao Tome e Principe' : saotome_principe,
+    'Canada' : canada,
+}
+
+opcao = textinput('Bandeiras', 'Qual bandeira você quer desenhar?(Japao, Polonia, Arabes Unidos, Indonesia, Holanda, Iemen, Austria, Bahamas, Palestina, Sudao, Grecia, Sao Tome e Principe ou Canada)')
+bandeiras[opcao]()
+    
 mainloop()
